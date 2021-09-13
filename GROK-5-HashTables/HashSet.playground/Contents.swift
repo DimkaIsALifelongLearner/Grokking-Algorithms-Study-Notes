@@ -1,58 +1,81 @@
-import Foundation
+// MARK: - Hash Set Imp
 
-class PrimitiveLinkedList {
-	
-	let value: Int
-	var next: PrimitiveLinkedList?
-	
-	init(value: Int) {
-		self.value = value
+/// Unordered hash naively implemented via Swift Dictionary
+struct HashSet<T: Hashable> {
+
+	/// Dictionary holding the values, unordered
+	/// This collection is chosen as it has hash function
+	/// `Bool` value is a placeholder
+	var bucketArray = Dictionary<T, Bool>()
+}
+
+/// Adds some of the CRUD operations
+extension HashSet {
+
+
+	/// Adds element to the collection
+	/// - Parameter element: Some type that can be hashed
+	mutating func insert(_ element: T) {
+		bucketArray[element] = true
+	}
+
+	/// Removes element from the collection
+	/// - Parameter element: Some type that can be hashed
+	mutating func remove(_ element: T) {
+		bucketArray[element] = nil
+	}
+
+	/// Removes all elements from the collection
+	mutating func removeAll() {
+		bucketArray.removeAll()
 	}
 }
 
-class MyHashSet {
+/// Adds the ability to peek and transform the collection
+extension HashSet {
 
-	private var bucket: [PrimitiveLinkedList?]
-	
-	/** Initialize your data structure here. */
-	init(size: Int = 2000) {
-		bucket = Array<PrimitiveLinkedList?>.init(
-			repeating: nil,
-			count: size
-		)
-	}
-	
-	func hashNaively(_ value: Int) -> Int {
-		if bucket.isEmpty {
-			print("Bucket is empty, assuming it will be 1st element")
-			print("Hash for value \(value) will be \(value % 1)")
-			return value % 1
+	/// Checks whether the collections contains value
+	/// - Parameter element: Element of the collection
+	/// - Returns: `true` if the collection has the element
+	func contains(_ element: T) -> Bool {
+		guard bucketArray[element] != nil else {
+			return false
 		}
-		
-		print("Hash for value \(value) will be \(value % bucket.count)")
-		return value % bucket.count
+		return true
 	}
-	
-	func add(_ key: Int) {
-		let hash = hashNaively(key)
-		
-		if bucket[hash] == nil {
-			print("No hash found, created new bucket entry")
-			bucket[hash] = PrimitiveLinkedList(value: key)
-		} else {
-			print("Collision detected, chaining...")
-			bucket[hash]?.next = PrimitiveLinkedList(value: key)
-		}
+
+	/// Converts the collection into a flat array
+	/// - Returns: Collection as flat array
+	func flatArray() -> [T] {
+		Array(bucketArray.keys)
 	}
 }
 
-/**
- * Your MyHashSet object will be instantiated and called as such:
- * let obj = MyHashSet()
- * obj.add(key)
- * obj.remove(key)
- * let ret_3: Bool = obj.contains(key)
- */
+/// Adds the ability to get count and check whether
+/// the collection is empty
+extension HashSet {
 
-let obj = MyHashSet(size: 0)
-obj.add(1)
+	/// Count
+	var count: Int {
+		bucketArray.count
+	}
+
+	/// `true` if empty
+	var isEmpty: Bool {
+		bucketArray.isEmpty
+	}
+}
+
+/// Subscripting capabilities
+extension HashSet {
+
+	/// Subscript
+	/// - Parameter element: Collection's element
+	/// - Returns: Collection's element, if any
+	subscript(_ element: T) -> T? {
+		guard bucketArray[element] != nil else {
+			return nil
+		}
+		return bucketArray[element] as? T
+	}
+}
