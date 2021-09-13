@@ -17,10 +17,10 @@
 /// - Parameter input: String
 /// - Returns: Hasр string's corresponding unicode scalars
 public func naiveHash(_ input: String) -> Int {
-	
+
 	/// Nothing special here: all input chars are mapped to their corresponding unicode numbers
 	let unicodeScalars = input.unicodeScalars.map { Int($0.value) }
-	
+
 	/// After the numbers were mapped, they're summed up and returned
 	/// For example:
 	///
@@ -32,10 +32,10 @@ public func naiveHash(_ input: String) -> Int {
 /// - Parameter input: String
 /// - Returns: Hasg string's corresponding unicode scalars
 public func djb2Hash(_ input: String) -> Int {
-	
+
 	/// Input is again mapped to numbers
 	let scalars = input.unicodeScalars.map{ $0.value }
-	
+
 	/// The number `5831` is used in testing and resulted in fewer `collisions` and better `avalanching`
 	///
 	/// - Note: A collision occurs when more than one value to be hashed by a particular hash
@@ -46,7 +46,7 @@ public func djb2Hash(_ input: String) -> Int {
 	/// in the input causes a change of, on average, half the bits of the output.
 	/// https://www.wolfram.com/language/12/cryptography/demonstrate-the-avalanche-effect-of-a-hash-function.html
 	return scalars.reduce(5831) {
-		
+
 		/// Technically this is an operation of multiplying by `33`:
 		///
 		///		$0 * 33 + $0
