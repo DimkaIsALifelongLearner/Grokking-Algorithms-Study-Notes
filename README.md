@@ -32,3 +32,11 @@ Interesting things there:
 
 1. [Recursive Quicksort / Xor Swap Implementation](https://github.com/DimkaIsALifelongLearner/Grokking-Algorithms-Study-Notes/blob/GROK-4-quicksort/GROK-4-Quicksort/Quicksort.playground/Contents.swift)
 
+### Chapter 5 – Hash Tables
+
+Interesting things here:
+
+1. Some hash functions
+2. Linked list on recursive enum
+3. Hash Set
+4. Hash Map
