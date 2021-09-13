@@ -51,20 +51,13 @@ When `hashTable["lastName"]` is called, the key is hashed and the index (`3`) se
 
 ## Hash Sets
 
+Hash Set allow to add unique values unordered. By default hash sets are implemented as Sets in Swift. Mathematically this is a set.
 
+You can peek how I play with hash set at [Grokking-Algorithms-Study-Notes](https://github.com/DimkaIsALifelongLearner/Grokking-Algorithms-Study-Notes/tree/GROK-5-hash-tables)/[GROK-5-HashTables](https://github.com/DimkaIsALifelongLearner/Grokking-Algorithms-Study-Notes/tree/GROK-5-hash-tables/GROK-5-HashTables)/[HashSet.playground](https://github.com/DimkaIsALifelongLearner/Grokking-Algorithms-Study-Notes/tree/GROK-5-hash-tables/GROK-5-HashTables/HashSet.playground)/[Contents.swift](https://github.com/DimkaIsALifelongLearner/Grokking-Algorithms-Study-Notes/blob/GROK-5-hash-tables/GROK-5-HashTables/HashSet.playground/Contents.swift)
 
-## Applying Hash Tables
+## Hash Map
 
-## Hash Tables Internals: Implementation
+Unlike hash set, the hash map introuce key-value semantics. As well as with set you can store values of a single type, that can be identical. But the uniqueness is a must, but now with keys. By default hash maps are implemented as Dictionaries in Swift.
 
-Swift dictionary is itself a hash-table.
-
-## Analysing Effectiveness
-
----
-
-## Recap Bullets
-
-- `hash function` and a `(bucket)array` are the main components of a hash-table;
-- 
+Glance how I play with hash map at [Grokking-Algorithms-Study-Notes](https://github.com/DimkaIsALifelongLearner/Grokking-Algorithms-Study-Notes/tree/GROK-5-hash-tables)/[GROK-5-HashTables](https://github.com/DimkaIsALifelongLearner/Grokking-Algorithms-Study-Notes/tree/GROK-5-hash-tables/GROK-5-HashTables)/[HashMap.playground](https://github.com/DimkaIsALifelongLearner/Grokking-Algorithms-Study-Notes/tree/GROK-5-hash-tables/GROK-5-HashTables/HashMap.playground)/[Contents.swift](https://github.com/DimkaIsALifelongLearner/Grokking-Algorithms-Study-Notes/blob/GROK-5-hash-tables/GROK-5-HashTables/HashMap.playground/Contents.swift)
 
