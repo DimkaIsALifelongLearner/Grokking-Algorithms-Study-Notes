@@ -31,3 +31,12 @@ Interesting things there:
 Interesting things there:
 
 1. [Recursive Quicksort / Xor Swap Implementation](https://github.com/DimkaIsALifelongLearner/Grokking-Algorithms-Study-Notes/blob/GROK-4-quicksort/GROK-4-Quicksort/Quicksort.playground/Contents.swift)
+
+### Chapter 5 – Hash Tables
+
+Interesting things here:
+
+1. [Some hash functions](https://github.com/DimkaIsALifelongLearner/Grokking-Algorithms-Study-Notes/blob/GROK-5-hash-tables/GROK-5-HashTables/HashMap.playground/Sources/Hash.swift)
+2. [Linked list on recursive enum](https://github.com/DimkaIsALifelongLearner/Grokking-Algorithms-Study-Notes/blob/GROK-5-hash-tables/GROK-5-HashTables/HashMap.playground/Sources/EnumLinkedList.swift)
+3. [Hash Set](https://github.com/DimkaIsALifelongLearner/Grokking-Algorithms-Study-Notes/blob/GROK-5-hash-tables/GROK-5-HashTables/HashSet.playground/Contents.swift)
+4. [Hash Map](https://github.com/DimkaIsALifelongLearner/Grokking-Algorithms-Study-Notes/blob/GROK-5-hash-tables/GROK-5-HashTables/HashMap.playground/Contents.swift)
